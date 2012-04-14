@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D6A687A153A000000516EF2 /* ListagemContatosController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6A6878153A000000516EF2 /* ListagemContatosController.m */; };
+		0D6A687B153A000000516EF2 /* ListagemContatosController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D6A6879153A000000516EF2 /* ListagemContatosController.xib */; };
 		0DF6022A1539F23600CA83EB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF602291539F23600CA83EB /* UIKit.framework */; };
 		0DF6022C1539F23600CA83EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF6022B1539F23600CA83EB /* Foundation.framework */; };
 		0DF6022E1539F23600CA83EB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF6022D1539F23600CA83EB /* CoreGraphics.framework */; };
@@ -16,15 +18,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D6A6877153A000000516EF2 /* ListagemContatosController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListagemContatosController.h; sourceTree = "<group>"; };
+		0D6A6878153A000000516EF2 /* ListagemContatosController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListagemContatosController.m; sourceTree = "<group>"; };
+		0D6A6879153A000000516EF2 /* ListagemContatosController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListagemContatosController.xib; sourceTree = "<group>"; };
 		0DF602251539F23600CA83EB /* Contatos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contatos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DF602291539F23600CA83EB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0DF6022B1539F23600CA83EB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0DF6022D1539F23600CA83EB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		0DF602311539F23700CA83EB /* Contatos-Info.plist */ = {isa = PBXFileReference; path = "Contatos-Info.plist"; sourceTree = "<group>"; };
+		0DF602311539F23700CA83EB /* Contatos-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Contatos-Info.plist"; sourceTree = "<group>"; };
 		0DF602331539F23700CA83EB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0DF602351539F23700CA83EB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0DF602371539F23700CA83EB /* Contatos-Prefix.pch */ = {isa = PBXFileReference; path = "Contatos-Prefix.pch"; sourceTree = "<group>"; };
-		0DF602381539F23700CA83EB /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		0DF602371539F23700CA83EB /* Contatos-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Contatos-Prefix.pch"; sourceTree = "<group>"; };
+		0DF602381539F23700CA83EB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0DF602391539F23700CA83EB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +80,9 @@
 				0DF602381539F23700CA83EB /* AppDelegate.h */,
 				0DF602391539F23700CA83EB /* AppDelegate.m */,
 				0DF602301539F23700CA83EB /* Supporting Files */,
+				0D6A6877153A000000516EF2 /* ListagemContatosController.h */,
+				0D6A6878153A000000516EF2 /* ListagemContatosController.m */,
+				0D6A6879153A000000516EF2 /* ListagemContatosController.xib */,
 			);
 			path = Contatos;
 			sourceTree = "<group>";
@@ -141,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DF602341539F23700CA83EB /* InfoPlist.strings in Resources */,
+				0D6A687B153A000000516EF2 /* ListagemContatosController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +162,7 @@
 			files = (
 				0DF602361539F23700CA83EB /* main.m in Sources */,
 				0DF6023A1539F23700CA83EB /* AppDelegate.m in Sources */,
+				0D6A687A153A000000516EF2 /* ListagemContatosController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +266,7 @@
 				0DF6023F1539F23700CA83EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,16 +7,25 @@
 //
 
 #import "AppDelegate.h"
+#import "ListagemContatosController.h"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
+@synthesize navigationController = _navigationController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    ListagemContatosController *listaContatos = [[ListagemContatosController alloc] initWithNibName:@"ListagemContatosController" bundle:nil];
+    
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:listaContatos];
+    
+    self.window.rootViewController = self.navigationController;
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
