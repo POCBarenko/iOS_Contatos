@@ -7,6 +7,7 @@
 //
 
 #import "ListagemContatosController.h"
+#import "Contato.h"
 
 @implementation ListagemContatosController
 
@@ -35,12 +36,20 @@
 {
     [super viewDidLoad];
     self.title = @"Contatos";
-    contatos = [[NSMutableArray alloc] initWithObjects:@"asdf", @"qwre", nil];
+    
+    UIBarButtonItem *add = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showForm)];
+    self.navigationItem.rightBarButtonItem = add;
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+-(void)showForm{
+    UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"alerta" message:@"Botao clicado" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    [alerta show];
 }
 
 - (void)viewDidUnload
@@ -93,15 +102,16 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    
+    // recicla celulas para economizar memoria
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
     // Configure the cell...
-    NSString *contato = [contatos objectAtIndex:[indexPath row]];
-    cell.textLabel.text = contato;
+    Contato *contato = [contatos objectAtIndex:[indexPath row]];
+    cell.textLabel.text = [contato nome];
+    cell.detailTextLabel.text = [contato email];
     
     return cell;
 }

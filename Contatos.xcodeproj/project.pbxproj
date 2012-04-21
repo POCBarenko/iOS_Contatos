@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		0D6A687A153A000000516EF2 /* ListagemContatosController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6A6878153A000000516EF2 /* ListagemContatosController.m */; };
 		0D6A687B153A000000516EF2 /* ListagemContatosController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D6A6879153A000000516EF2 /* ListagemContatosController.xib */; };
+		0D95D7A91542E72400B6F8B3 /* contatos.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D95D7A81542E72400B6F8B3 /* contatos.plist */; };
+		0D95D7B01542F1DC00B6F8B3 /* Contato.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D95D7AF1542F1DC00B6F8B3 /* Contato.m */; };
+		0D95D7B91542FE4100B6F8B3 /* FormContatoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D95D7B71542FE4100B6F8B3 /* FormContatoController.m */; };
+		0D95D7BA1542FE4100B6F8B3 /* FormContatoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D95D7B81542FE4100B6F8B3 /* FormContatoController.xib */; };
 		0DF6022A1539F23600CA83EB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF602291539F23600CA83EB /* UIKit.framework */; };
 		0DF6022C1539F23600CA83EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF6022B1539F23600CA83EB /* Foundation.framework */; };
 		0DF6022E1539F23600CA83EB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF6022D1539F23600CA83EB /* CoreGraphics.framework */; };
@@ -21,6 +25,12 @@
 		0D6A6877153A000000516EF2 /* ListagemContatosController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListagemContatosController.h; sourceTree = "<group>"; };
 		0D6A6878153A000000516EF2 /* ListagemContatosController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListagemContatosController.m; sourceTree = "<group>"; };
 		0D6A6879153A000000516EF2 /* ListagemContatosController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListagemContatosController.xib; sourceTree = "<group>"; };
+		0D95D7A81542E72400B6F8B3 /* contatos.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = contatos.plist; sourceTree = "<group>"; };
+		0D95D7AE1542F1DC00B6F8B3 /* Contato.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contato.h; sourceTree = "<group>"; };
+		0D95D7AF1542F1DC00B6F8B3 /* Contato.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contato.m; sourceTree = "<group>"; };
+		0D95D7B61542FE4100B6F8B3 /* FormContatoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormContatoController.h; sourceTree = "<group>"; };
+		0D95D7B71542FE4100B6F8B3 /* FormContatoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormContatoController.m; sourceTree = "<group>"; };
+		0D95D7B81542FE4100B6F8B3 /* FormContatoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FormContatoController.xib; sourceTree = "<group>"; };
 		0DF602251539F23600CA83EB /* Contatos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contatos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DF602291539F23600CA83EB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0DF6022B1539F23600CA83EB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -77,12 +87,17 @@
 		0DF6022F1539F23600CA83EB /* Contatos */ = {
 			isa = PBXGroup;
 			children = (
+				0D95D7B61542FE4100B6F8B3 /* FormContatoController.h */,
+				0D95D7B71542FE4100B6F8B3 /* FormContatoController.m */,
+				0D95D7B81542FE4100B6F8B3 /* FormContatoController.xib */,
 				0DF602381539F23700CA83EB /* AppDelegate.h */,
 				0DF602391539F23700CA83EB /* AppDelegate.m */,
 				0DF602301539F23700CA83EB /* Supporting Files */,
 				0D6A6877153A000000516EF2 /* ListagemContatosController.h */,
 				0D6A6878153A000000516EF2 /* ListagemContatosController.m */,
 				0D6A6879153A000000516EF2 /* ListagemContatosController.xib */,
+				0D95D7AE1542F1DC00B6F8B3 /* Contato.h */,
+				0D95D7AF1542F1DC00B6F8B3 /* Contato.m */,
 			);
 			path = Contatos;
 			sourceTree = "<group>";
@@ -94,6 +109,7 @@
 				0DF602321539F23700CA83EB /* InfoPlist.strings */,
 				0DF602351539F23700CA83EB /* main.m */,
 				0DF602371539F23700CA83EB /* Contatos-Prefix.pch */,
+				0D95D7A81542E72400B6F8B3 /* contatos.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -150,6 +166,8 @@
 			files = (
 				0DF602341539F23700CA83EB /* InfoPlist.strings in Resources */,
 				0D6A687B153A000000516EF2 /* ListagemContatosController.xib in Resources */,
+				0D95D7A91542E72400B6F8B3 /* contatos.plist in Resources */,
+				0D95D7BA1542FE4100B6F8B3 /* FormContatoController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +181,8 @@
 				0DF602361539F23700CA83EB /* main.m in Sources */,
 				0DF6023A1539F23700CA83EB /* AppDelegate.m in Sources */,
 				0D6A687A153A000000516EF2 /* ListagemContatosController.m in Sources */,
+				0D95D7B01542F1DC00B6F8B3 /* Contato.m in Sources */,
+				0D95D7B91542FE4100B6F8B3 /* FormContatoController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

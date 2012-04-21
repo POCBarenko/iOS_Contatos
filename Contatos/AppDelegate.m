@@ -8,21 +8,65 @@
 
 #import "AppDelegate.h"
 #import "ListagemContatosController.h"
+#import "Contato.h"
+
+
+//Declaracao de categoria, tudo nela eh visivel apenas neste arquivo... (simula privado)
+@interface AppDelegate(){
+    NSMutableArray *contatos;
+}
+//@property (nonatomic, strong) UILabel *xpto;
+@end
+
+
+
 
 @implementation AppDelegate
 
 @synthesize window = _window;
 @synthesize navigationController = _navigationController;
 
+-(void) loadProperties{
+    NSString *bundleFileName = [[NSBundle mainBundle] pathForResource:@"contatos" ofType:@"plist"];
+    
+    NSMutableDictionary *contatosDic = [NSMutableDictionary dictionaryWithContentsOfFile:bundleFileName];
+    
+    contatos = [[NSMutableArray alloc] init];
+    for(NSString *key in contatosDic){
+        NSDictionary *d = [contatosDic objectForKey:key];
+        Contato *c = [[Contato alloc] initWithDictionary:d];
+        [contatos addObject:c];
+    }
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    /*
+    Contato *caelumSP = [[Contato alloc] init];
+    [caelumSP setNome:@"Caelum Unidade SP"];
+    [caelumSP setEmail:@"contato@caelum.com.br"];
+    
+    NSLog(@"Contato: %@ - %@", [caelumSP nome], [caelumSP email]);
+    
+    Contato *caelumBSB = [[Contato alloc] init];
+    [caelumBSB setNome:@"Caelum Unidade BSB"];
+    [caelumBSB setEmail:@"contatobsb@caelum.com.br"];
+    
+    NSLog(@"Contato: %@ - %@", caelumSP.nome, caelumSP.email);
+    */
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     
-    ListagemContatosController *listaContatos = [[ListagemContatosController alloc] initWithNibName:@"ListagemContatosController" bundle:nil];
+    [self loadProperties];
+
+    ListagemContatosController *listaContatos = [[ListagemContatosController alloc] initWithNibName:@"ListagemContatosController" bundle:[NSBundle mainBundle]];
+
+    listaContatos.contatos = contatos;
     
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:listaContatos];
+    
     
     self.window.rootViewController = self.navigationController;
     
