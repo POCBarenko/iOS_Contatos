@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ContatoProtocol.h"
 
 @interface FormContatoController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *nome;
@@ -14,4 +15,5 @@
 @property (weak, nonatomic) IBOutlet UITextField *telefone;
 @property (weak, nonatomic) IBOutlet UITextField *endereco;
 @property (weak, nonatomic) IBOutlet UITextField *site;
+@property (strong, nonatomic) id<ContatoProtocol> delegate;
 @end

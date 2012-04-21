@@ -7,8 +7,12 @@
 //
 
 #import "FormContatoController.h"
+#import "Contato.h"
+#import "ListagemContatosController.h"
+#import "ContatoProtocol.h"
 
 @implementation FormContatoController
+@synthesize delegate;
 @synthesize nome;
 @synthesize email;
 @synthesize telefone;
@@ -38,6 +42,28 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.title = @"Cadastro";
+    UIBarButtonItem *back = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemUndo target:self action:@selector(cancel)];
+    self.navigationItem.leftBarButtonItem = back;
+
+    UIBarButtonItem *add = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(add)];
+    self.navigationItem.rightBarButtonItem = add;
+}
+
+-(void) cancel{
+    [self dismissModalViewControllerAnimated:YES];
+}
+-(void) add{
+    Contato *c = [[Contato alloc] init];
+    c.nome = self.nome.text;
+    c.email = self.email.text;
+    c.telefone = self.telefone.text;
+    c.endereco = self.endereco.text;
+    c.site = self.site.text;
+    
+    [delegate addContact:c];
+    
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)viewDidUnload
@@ -48,6 +74,7 @@
     [self setEndereco:nil];
     [self setSite:nil];
     [super viewDidUnload];
+    
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }

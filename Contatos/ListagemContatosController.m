@@ -8,6 +8,8 @@
 
 #import "ListagemContatosController.h"
 #import "Contato.h"
+#import "FormContatoController.h"
+#import "EditFormContatoController.h"
 
 @implementation ListagemContatosController
 
@@ -37,6 +39,9 @@
     [super viewDidLoad];
     self.title = @"Contatos";
     
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    
+    
     UIBarButtonItem *add = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showForm)];
     self.navigationItem.rightBarButtonItem = add;
     
@@ -48,8 +53,23 @@
 }
 
 -(void)showForm{
-    UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"alerta" message:@"Botao clicado" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-    [alerta show];
+    FormContatoController *form = [[FormContatoController alloc]initWithNibName:@"FormContatoController" bundle: [NSBundle mainBundle]];
+    
+    form.delegate = self;
+    
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:form];
+
+    [self presentModalViewController:nav animated: YES];
+    
+}
+
+-(void) addContact:(Contato *)contato{
+    [self.contatos addObject:contato];
+    [self.tableView reloadData];
+}
+
+-(void) savedContact{
+    [self.tableView reloadData];
 }
 
 - (void)viewDidUnload
@@ -125,19 +145,24 @@
 }
 */
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    switch (editingStyle) {
+        case UITableViewCellEditingStyleDelete:
+            [self.contatos removeObjectAtIndex:indexPath.row];
+            
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+        case UITableViewCellEditingStyleInsert:
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+            break;
+        default:
+            break;
+    }
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.
@@ -160,12 +185,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
+    Contato *c = [self.contatos objectAtIndex:indexPath.row];
+    EditFormContatoController *form = [[EditFormContatoController alloc] initWithContato:c];
+    form.delegate = self;
      // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    [self.navigationController pushViewController:form animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end
