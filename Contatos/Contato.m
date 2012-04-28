@@ -9,7 +9,7 @@
 #import "Contato.h"
 
 @implementation Contato
-@synthesize nome, email, telefone, endereco, site;
+@synthesize nome, email, telefone, endereco, site, imagem;
 
 
 - (id)initWithDictionary:(NSDictionary *) dictionary
@@ -22,6 +22,9 @@
         [self setTelefone:[dictionary objectForKey:@"telefone"]];
         [self setEndereco:[dictionary objectForKey:@"endereco"]];
         [self setSite:[dictionary objectForKey:@"site"]];
+        
+        NSData *img = [dictionary objectForKey:@"imagem"];
+        [self setImagem:[UIImage imageWithData:img]];
     }
     return self;
 }

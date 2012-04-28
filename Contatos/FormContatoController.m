@@ -19,6 +19,11 @@
 @synthesize endereco;
 @synthesize site;
 @synthesize botaoAdicionaImagem;
+@synthesize textoAtual;
+
+-(IBAction)focoNoTexto:(UITextField *)currentText {
+    self.textoAtual = currentText;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,6 +44,13 @@
 
 #pragma mark - View lifecycle
 
+- (void) escondeTeclado {
+    if(self.textoAtual){
+        [self.textoAtual resignFirstResponder];
+        self.textoAtual = nil;
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -49,6 +61,10 @@
 
     UIBarButtonItem *add = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(add)];
     self.navigationItem.rightBarButtonItem = add;
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self action:@selector(escondeTeclado)];
+    [self.view addGestureRecognizer:tap];
 }
 
 -(void) cancel{
@@ -61,6 +77,7 @@
     c.telefone = self.telefone.text;
     c.endereco = self.endereco.text;
     c.site = self.site.text;
+    c.imagem = self.botaoAdicionaImagem.imageView.image;
     
     [delegate addContact:c];
     

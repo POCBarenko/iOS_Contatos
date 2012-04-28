@@ -236,6 +236,7 @@
 						<string key="NSFrame">{{70, 391}, {230, 31}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -298,18 +299,19 @@
 						<reference key="IBUIFontDescription" ref="717732450"/>
 						<reference key="IBUIFont" ref="373232010"/>
 					</object>
-					<object class="IBUIButton" id="556561182">
+					<object class="IBUIButton" id="828044604">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{20, 20}, {280, 207}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="458606930"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<int key="IBUIButtonType">1</int>
-						<object class="NSColor" key="IBUIHighlightedTitleColor" id="196296991">
+						<object class="NSColor" key="IBUIHighlightedTitleColor" id="334543352">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
 						</object>
@@ -317,15 +319,15 @@
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 						</object>
-						<object class="NSColor" key="IBUINormalTitleShadowColor" id="489236803">
+						<object class="NSColor" key="IBUINormalTitleShadowColor" id="234066543">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MC41AA</bytes>
 						</object>
-						<object class="IBUIFontDescription" key="IBUIFontDescription" id="577581159">
+						<object class="IBUIFontDescription" key="IBUIFontDescription" id="395728260">
 							<int key="type">2</int>
 							<double key="pointSize">15</double>
 						</object>
-						<object class="NSFont" key="IBUIFont" id="295815936">
+						<object class="NSFont" key="IBUIFont" id="635626778">
 							<string key="NSName">Helvetica-Bold</string>
 							<double key="NSSize">15</double>
 							<int key="NSfFlags">16</int>
@@ -335,7 +337,7 @@
 				<string key="NSFrame">{{0, 20}, {320, 460}}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView" ref="458606930"/>
+				<reference key="NSNextKeyView" ref="828044604"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
 					<bytes key="NSWhite">MQA</bytes>
@@ -353,14 +355,14 @@
 				<int key="IBUIContentHorizontalAlignment">0</int>
 				<int key="IBUIContentVerticalAlignment">0</int>
 				<int key="IBUIButtonType">1</int>
-				<reference key="IBUIHighlightedTitleColor" ref="196296991"/>
+				<reference key="IBUIHighlightedTitleColor" ref="334543352"/>
 				<object class="NSColor" key="IBUINormalTitleColor">
 					<int key="NSColorSpace">1</int>
 					<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 				</object>
-				<reference key="IBUINormalTitleShadowColor" ref="489236803"/>
-				<reference key="IBUIFontDescription" ref="577581159"/>
-				<reference key="IBUIFont" ref="295815936"/>
+				<reference key="IBUINormalTitleShadowColor" ref="234066543"/>
+				<reference key="IBUIFontDescription" ref="395728260"/>
+				<reference key="IBUIFont" ref="635626778"/>
 			</object>
 		</array>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
@@ -417,14 +419,59 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">botaoAdicionaImagem</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="556561182"/>
+						<reference key="destination" ref="828044604"/>
 					</object>
 					<int key="connectionID">22</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">focoNoTexto:</string>
+						<reference key="source" ref="295142065"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">17</int>
+					</object>
+					<int key="connectionID">25</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">focoNoTexto:</string>
+						<reference key="source" ref="6721226"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">19</int>
+					</object>
+					<int key="connectionID">26</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">focoNoTexto:</string>
+						<reference key="source" ref="584634787"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">19</int>
+					</object>
+					<int key="connectionID">27</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">focoNoTexto:</string>
+						<reference key="source" ref="168239385"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">19</int>
+					</object>
+					<int key="connectionID">28</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">focoNoTexto:</string>
+						<reference key="source" ref="977313229"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">19</int>
+					</object>
+					<int key="connectionID">29</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">selecionaFoto:</string>
-						<reference key="source" ref="556561182"/>
+						<reference key="source" ref="828044604"/>
 						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
@@ -446,14 +493,14 @@
 							<reference ref="458606930"/>
 							<reference ref="295142065"/>
 							<reference ref="929847107"/>
-							<reference ref="6721226"/>
 							<reference ref="101062867"/>
 							<reference ref="584634787"/>
 							<reference ref="168239385"/>
 							<reference ref="977313229"/>
 							<reference ref="142603434"/>
 							<reference ref="452358118"/>
-							<reference ref="556561182"/>
+							<reference ref="828044604"/>
+							<reference ref="6721226"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -525,7 +572,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">21</int>
-						<reference key="object" ref="556561182"/>
+						<reference key="object" ref="828044604"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</array>
@@ -553,24 +600,27 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">23</int>
+			<int key="maxID">29</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
 					<string key="className">FormContatoController</string>
 					<string key="superclassName">UIViewController</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">selecionaFoto:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">selecionaFoto:</string>
-						<object class="IBActionInfo" key="NS.object.0">
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="focoNoTexto:">UITextField</string>
+						<string key="selecionaFoto:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="focoNoTexto:">
+							<string key="name">focoNoTexto:</string>
+							<string key="candidateClassName">UITextField</string>
+						</object>
+						<object class="IBActionInfo" key="selecionaFoto:">
 							<string key="name">selecionaFoto:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-					</object>
+					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="botaoAdicionaImagem">UIButton</string>
 						<string key="email">UITextField</string>
@@ -578,6 +628,7 @@
 						<string key="nome">UITextField</string>
 						<string key="site">UITextField</string>
 						<string key="telefone">UITextField</string>
+						<string key="textoAtual">UITextField</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="botaoAdicionaImagem">
@@ -602,6 +653,10 @@
 						</object>
 						<object class="IBToOneOutletInfo" key="telefone">
 							<string key="name">telefone</string>
+							<string key="candidateClassName">UITextField</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="textoAtual">
+							<string key="name">textoAtual</string>
 							<string key="candidateClassName">UITextField</string>
 						</object>
 					</dictionary>

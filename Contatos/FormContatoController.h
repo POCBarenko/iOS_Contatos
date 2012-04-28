@@ -18,5 +18,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *botaoAdicionaImagem;
 @property (strong, nonatomic) id<ContatoProtocol> delegate;
 
+@property(weak, nonatomic) IBOutlet UITextField *textoAtual;
+
 -(IBAction)selecionaFoto:(id)sender;
+-(IBAction)focoNoTexto:(UITextField *)currentText;
 @end

@@ -35,6 +35,11 @@
     contato.telefone = self.telefone.text;
     contato.endereco = self.endereco.text;
     contato.site = self.site.text;
+    contato.imagem = self.botaoAdicionaImagem.imageView.image;
+    
+    NSString *msg = [[NSString alloc] initWithFormat:@"%@", (contato.imagem)];
+    
+    [[[UIAlertView alloc] initWithTitle:@"" message:msg delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil] show];
     
     [self.delegate savedContact];
     
@@ -47,6 +52,7 @@
     self.telefone.text = contato.telefone;
     self.endereco.text = contato.endereco;
     self.site.text = contato.site;
+    [self.botaoAdicionaImagem setImage:contato.imagem forState:UIControlStateNormal];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
