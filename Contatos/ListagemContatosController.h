@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MFMailComposeViewController.h>
 #import "Contato.h"
 #import "ContatoProtocol.h"
 
-@interface ListagemContatosController : UITableViewController <ContatoProtocol>
+@interface ListagemContatosController : UITableViewController <ContatoProtocol, UIActionSheetDelegate, MFMailComposeViewControllerDelegate>
 @property (strong, nonatomic) NSMutableArray *contatos;
 
 @end

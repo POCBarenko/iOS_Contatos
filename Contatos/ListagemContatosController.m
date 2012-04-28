@@ -11,7 +11,11 @@
 #import "FormContatoController.h"
 #import "EditFormContatoController.h"
 
+
 @implementation ListagemContatosController
+{
+    Contato *selectedContact;
+}
 
 @synthesize contatos;
 
@@ -37,11 +41,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(showOptions:)];
+    [self.tableView addGestureRecognizer:longPress];
+    
     self.title = @"Contatos";
     
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    
-    
+        
     UIBarButtonItem *add = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showForm)];
     self.navigationItem.rightBarButtonItem = add;
     
@@ -52,7 +59,20 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
--(void)showForm{
+-(void)showOptions:(UIGestureRecognizer *)gesture
+{
+    if(gesture.state ==UIGestureRecognizerStateBegan){
+        CGPoint point = [gesture locationInView:self.tableView];
+        NSIndexPath *index = [self.tableView indexPathForRowAtPoint:point];
+        selectedContact = [self.contatos objectAtIndex:index.row];
+    
+        UIActionSheet *options = [[UIActionSheet alloc] initWithTitle:selectedContact.nome delegate:self cancelButtonTitle:@"cancelar" destructiveButtonTitle:nil otherButtonTitles:@"Ligar", @"Enviar E-mail", @"Visualizar Site", @"Exibir Mapa", nil];
+        [options showInView:self.tableView];
+    }
+}
+
+-(void)showForm
+{
     FormContatoController *form = [[FormContatoController alloc]initWithNibName:@"FormContatoController" bundle: [NSBundle mainBundle]];
     
     form.delegate = self;
@@ -61,14 +81,80 @@
 
     [self presentModalViewController:nav animated: YES];
     
+    
 }
 
--(void) addContact:(Contato *)contato{
+-(void) openURL:(NSString *) url
+{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+}
+
+-(void) call:(Contato *)c{
+    UIDevice *device = [UIDevice currentDevice]; 
+    if ([device.model isEqualToString:@"iPhone"]){
+        NSString *url = [NSString stringWithFormat:@"tel:%@", c.telefone];
+        [self openURL:url];
+    } else {
+        [[[UIAlertView alloc]initWithTitle:@"Alerta" message:@"Seu dispositivo nao suporta ligacoes" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    }
+        
+}
+
+-(void) siteView:(Contato *)c{
+    [self openURL:c.site];
+}
+
+-(void) openMap:(Contato *)c{
+    NSString *url = [[NSString stringWithFormat:@"http://maps.google.com/maps?q=%@", c.endereco] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    [self openURL:url];
+}
+
+-(void) sendMail:(Contato *)c{
+    if ([MFMailComposeViewController canSendMail]) {
+        MFMailComposeViewController *sender = [[MFMailComposeViewController alloc] init];
+        sender.mailComposeDelegate = self;
+        
+        [sender setToRecipients:[NSArray arrayWithObject:selectedContact.email]];
+        [sender setSubject:@"Caelum"];
+        
+        [self presentModalViewController:sender animated:YES];
+    }else{
+        [[[UIAlertView alloc]initWithTitle:@"Ops" message:@"Nao pode enviar email" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    }
+}
+
+-(void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error{
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+-(void) actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)index
+{
+    switch (index) {
+        case 0:
+            [self call:selectedContact];
+            break;
+        case 1:
+            [self sendMail:selectedContact];
+            break;
+        case 2:
+            [self siteView:selectedContact];
+            break;
+        case 3:
+            [self openMap:selectedContact];
+            break;
+        default:
+            break;
+    }
+}
+
+-(void) addContact:(Contato *)contato
+{
     [self.contatos addObject:contato];
     [self.tableView reloadData];
 }
 
--(void) savedContact{
+-(void) savedContact
+{
     [self.tableView reloadData];
 }
 

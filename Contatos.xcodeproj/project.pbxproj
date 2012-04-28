@@ -10,6 +10,7 @@
 		0D3B972215433BA60004B674 /* EditFormContatoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3B972015433BA50004B674 /* EditFormContatoController.m */; };
 		0D6A687A153A000000516EF2 /* ListagemContatosController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6A6878153A000000516EF2 /* ListagemContatosController.m */; };
 		0D6A687B153A000000516EF2 /* ListagemContatosController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D6A6879153A000000516EF2 /* ListagemContatosController.xib */; };
+		0D930928154C3B1F0005B53E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D930927154C3B1F0005B53E /* MessageUI.framework */; };
 		0D95D7A91542E72400B6F8B3 /* contatos.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D95D7A81542E72400B6F8B3 /* contatos.plist */; };
 		0D95D7B01542F1DC00B6F8B3 /* Contato.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D95D7AF1542F1DC00B6F8B3 /* Contato.m */; };
 		0D95D7B91542FE4100B6F8B3 /* FormContatoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D95D7B71542FE4100B6F8B3 /* FormContatoController.m */; };
@@ -29,6 +30,7 @@
 		0D6A6877153A000000516EF2 /* ListagemContatosController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListagemContatosController.h; sourceTree = "<group>"; };
 		0D6A6878153A000000516EF2 /* ListagemContatosController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListagemContatosController.m; sourceTree = "<group>"; };
 		0D6A6879153A000000516EF2 /* ListagemContatosController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListagemContatosController.xib; sourceTree = "<group>"; };
+		0D930927154C3B1F0005B53E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		0D95D7A81542E72400B6F8B3 /* contatos.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = contatos.plist; sourceTree = "<group>"; };
 		0D95D7AE1542F1DC00B6F8B3 /* Contato.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contato.h; sourceTree = "<group>"; };
 		0D95D7AF1542F1DC00B6F8B3 /* Contato.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contato.m; sourceTree = "<group>"; };
@@ -52,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D930928154C3B1F0005B53E /* MessageUI.framework in Frameworks */,
 				0DF6022A1539F23600CA83EB /* UIKit.framework in Frameworks */,
 				0DF6022C1539F23600CA83EB /* Foundation.framework in Frameworks */,
 				0DF6022E1539F23600CA83EB /* CoreGraphics.framework in Frameworks */,
@@ -81,6 +84,7 @@
 		0DF602281539F23600CA83EB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0D930927154C3B1F0005B53E /* MessageUI.framework */,
 				0DF602291539F23600CA83EB /* UIKit.framework */,
 				0DF6022B1539F23600CA83EB /* Foundation.framework */,
 				0DF6022D1539F23600CA83EB /* CoreGraphics.framework */,

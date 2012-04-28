@@ -18,6 +18,7 @@
 @synthesize telefone;
 @synthesize endereco;
 @synthesize site;
+@synthesize botaoAdicionaImagem;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -73,6 +74,7 @@
     [self setTelefone:nil];
     [self setEndereco:nil];
     [self setSite:nil];
+    [self setBotaoAdicionaImagem:nil];
     [super viewDidUnload];
     
     // Release any retained subviews of the main view.
@@ -83,6 +85,44 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+-(IBAction)selecionaFoto:(id)sender{
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+        UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Escolha a foto do contato" delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:@"Tirar Foto", @"Escolher da biblioteca", nil];
+        [sheet showInView:self.view];
+    } else {
+        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        picker.allowsEditing=YES;
+        picker.delegate = self;
+        [self presentModalViewController:picker animated:YES];
+    }
+}
+
+-(void) actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex{
+    UIImagePickerController *picker = [[UIImagePickerController alloc]init];
+    picker.delegate = self;
+    picker.allowsEditing=YES;
+    
+    switch (buttonIndex) {
+        case 0:
+            picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+            break;
+        case 1:
+            picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            break;            
+            
+        default:
+            break;
+    }
+    [self presentModalViewController:picker animated:YES];
+}
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    UIImage *image = [info valueForKey:UIImagePickerControllerEditedImage];
+    [botaoAdicionaImagem setImage:image forState:UIControlStateNormal];
+    [picker dismissModalViewControllerAnimated:YES];
 }
 
 @end
